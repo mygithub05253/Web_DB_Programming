@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB1</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="data:,">
+  </head>
+  <body>
+    <h1><a href="/">WEB</a></h1>
+    <!-- <a href="/author">author</a> -->
+    <!-- <ol type="1">
+      <% var i = 0;
+        while(i < list.length) {
+      %>
+      <li><a href="#"><%= list[i].title %></a></li>
+      <%
+        i ++;
+        }    
+      %>  
+    </ol> -->
+
+    <!-- main.js에서 넘어오는 list 변수의 내용에 html이 포함되어 있음 -->
+    <!-- 따라서 그 html을 문자열이 아닌 html 문장으로 번역하여 출력 -->
+    <!-- <%- list %> -->
+
+    <ol type="1">
+      <% var i = 0
+        while(i < list.length)
+        { %>
+          <li><a href="/page/<%=list[i].id%>"><%= list[i].title %></a></li>
+      <% i += 1  } %>
+    </ol>
+
+    <%- menu %>
+    <%- body %>
+  </body>
+</html>
